@@ -55,3 +55,14 @@ while(i <= 5) {
     cout << i << endl;
     i++;
 }
+#include <iostream>
+using namespace std;
+
+void greet() {
+    cout << "Hello!";
+}
+
+int main() {
+    greet();
+    return 0;
+}
