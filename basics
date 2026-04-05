@@ -255,3 +255,17 @@ int main() {
     file << "Hello File";
     file.close();
 }
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ifstream file("test.txt");
+    string data;
+
+    while(getline(file, data)) {
+        cout << data;
+    }
+
+    file.close();
+}
