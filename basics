@@ -203,3 +203,24 @@ int main() {
     cout << obj.sum(2, 3) << endl;
     cout << obj.sum(2, 3, 4);
 }
+#include <iostream>
+using namespace std;
+
+class A {
+public:
+    void show() {
+        cout << "Base";
+    }
+};
+
+class B : public A {
+public:
+    void show() {
+        cout << "Derived";
+    }
+};
+
+int main() {
+    B obj;
+    obj.show();
+}
