@@ -246,3 +246,12 @@ int main() {
     s.setMarks(90);
     cout << s.getMarks();
 }
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main() {
+    ofstream file("test.txt");
+    file << "Hello File";
+    file.close();
+}
