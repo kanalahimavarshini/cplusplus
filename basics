@@ -138,3 +138,19 @@ int main() {
     cout << s1.name << " " << s1.age;
     return 0;
 }
+#include <iostream>
+using namespace std;
+
+class Student {
+public:
+    string name;
+
+    Student() {
+        name = "Default";
+    }
+};
+
+int main() {
+    Student s1;
+    cout << s1.name;
+}
