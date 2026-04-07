@@ -132,3 +132,17 @@ int main() {
 
     cout << result;
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str = "I love C++";
+    int count = 1;
+
+    for(char c : str) {
+        if(c == ' ')
+            count++;
+    }
+
+    cout << "Words: " << count;
+}
