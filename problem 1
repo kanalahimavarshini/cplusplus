@@ -146,3 +146,21 @@ int main() {
 
     cout << "Words: " << count;
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    char op;
+    int a = 10, b = 5;
+
+    cout << "Enter operator (+,-,*,/): ";
+    cin >> op;
+
+    switch(op) {
+        case '+': cout << a + b; break;
+        case '-': cout << a - b; break;
+        case '*': cout << a * b; break;
+        case '/': cout << a / b; break;
+        default: cout << "Invalid";
+    }
+}
