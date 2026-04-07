@@ -493,3 +493,21 @@ int main() {
 
     cout << "Vowels: " << count;
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n = 153, temp, sum = 0, r;
+    temp = n;
+
+    while(n > 0) {
+        r = n % 10;
+        sum += r * r * r;
+        n /= 10;
+    }
+
+    if(sum == temp)
+        cout << "Armstrong";
+    else
+        cout << "Not Armstrong";
+}
