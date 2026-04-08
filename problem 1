@@ -320,3 +320,16 @@ int main() {
 
     cout << "ASCII: " << int(c);
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    char c = 'a';
+
+    if(isalpha(c))
+        cout << "Alphabet";
+    else if(isdigit(c))
+        cout << "Digit";
+    else
+        cout << "Special Character";
+}
