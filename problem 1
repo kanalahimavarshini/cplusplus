@@ -364,3 +364,26 @@ int main() {
 
     cout << decimal;
 }
+#include <iostream>
+using namespace std;
+
+int fact(int n) {
+    int f = 1;
+    for(int i = 1; i <= n; i++)
+        f *= i;
+    return f;
+}
+
+int main() {
+    int n = 145, sum = 0, temp = n;
+
+    while(n > 0) {
+        sum += fact(n % 10);
+        n /= 10;
+    }
+
+    if(sum == temp)
+        cout << "Strong Number";
+    else
+        cout << "Not Strong";
+}
