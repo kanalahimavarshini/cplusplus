@@ -81,3 +81,29 @@ int main() {
         temp = temp->next;
     }
 }
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* next;
+};
+
+int main() {
+    Node* head = new Node{1, NULL};
+    head->next = new Node{2, NULL};
+
+    Node *prev = NULL, *curr = head, *next;
+
+    while(curr != NULL) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+
+    while(prev != NULL) {
+        cout << prev->data << " ";
+        prev = prev->next;
+    }
+}
