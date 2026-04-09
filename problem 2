@@ -256,3 +256,26 @@ int main() {
     else
         cout << "Not Palindrome";
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str = "I love programming in C++";
+    string word = "", maxWord = "";
+
+    for(char c : str) {
+        if(c != ' ') {
+            word += c;
+        } else {
+            if(word.length() > maxWord.length())
+                maxWord = word;
+            word = "";
+        }
+    }
+
+    // check last word
+    if(word.length() > maxWord.length())
+        maxWord = word;
+
+    cout << "Largest word: " << maxWord;
+}
