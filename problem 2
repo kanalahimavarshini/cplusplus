@@ -464,3 +464,17 @@ int main() {
 
     cout << str;
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    string str = "hello world";
+    string result = "";
+
+    for(char c : str) {
+        if(!(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'))
+            result += c;
+    }
+
+    cout << result;
+}
