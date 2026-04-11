@@ -162,3 +162,24 @@ int main() {
     for(int i = 0; i <= j; i++)
         cout << arr[i] << " ";
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[][2] = {{1,3},{2,6},{8,10}};
+    int n = 3;
+
+    int start = arr[0][0], end = arr[0][1];
+
+    for(int i = 1; i < n; i++) {
+        if(arr[i][0] <= end) {
+            end = max(end, arr[i][1]);
+        } else {
+            cout << start << " " << end << endl;
+            start = arr[i][0];
+            end = arr[i][1];
+        }
+    }
+
+    cout << start << " " << end;
+}
