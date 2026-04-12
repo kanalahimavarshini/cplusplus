@@ -242,3 +242,19 @@ void toh(int n, char from, char to, char aux) {
 int main() {
     toh(3, 'A', 'C', 'B');
 }
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+};
+
+int main() {
+    Node* root = new Node{1, NULL, NULL};
+    root->left = new Node{2, NULL, NULL};
+    root->right = new Node{3, NULL, NULL};
+
+    cout << root->data;
+}
