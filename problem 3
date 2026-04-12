@@ -327,3 +327,23 @@ int main() {
 
     postorder(root);
 }
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+};
+
+int height(Node* root) {
+    if(root == NULL) return 0;
+    return 1 + max(height(root->left), height(root->right));
+}
+
+int main() {
+    Node* root = new Node{1, NULL, NULL};
+    root->left = new Node{2, NULL, NULL};
+
+    cout << height(root);
+}
