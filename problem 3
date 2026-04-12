@@ -347,3 +347,23 @@ int main() {
 
     cout << height(root);
 }
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+};
+
+int countNodes(Node* root) {
+    if(root == NULL) return 0;
+    return 1 + countNodes(root->left) + countNodes(root->right);
+}
+
+int main() {
+    Node* root = new Node{1, NULL, NULL};
+    root->left = new Node{2, NULL, NULL};
+
+    cout << countNodes(root);
+}
