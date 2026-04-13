@@ -435,3 +435,33 @@ int main() {
 
     dfs(1);
 }
+#include <iostream>
+#include <queue>
+#include <vector>
+using namespace std;
+
+vector<int> adj[10];
+bool visited[10];
+
+int main() {
+    queue<int> q;
+
+    adj[1].push_back(2);
+    adj[1].push_back(3);
+
+    q.push(1);
+    visited[1] = true;
+
+    while(!q.empty()) {
+        int node = q.front();
+        q.pop();
+        cout << node << " ";
+
+        for(int x : adj[node]) {
+            if(!visited[x]) {
+                visited[x] = true;
+                q.push(x);
+            }
+        }
+    }
+}
