@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int wt[] = {1,2,3};
+    int val[] = {10,15,40};
+    int W = 5, n = 3;
+
+    int dp[10][10] = {0};
+
+    for(int i = 1; i <= n; i++) {
+        for(int w = 1; w <= W; w++) {
+            if(wt[i-1] <= w)
+                dp[i][w] = max(val[i-1] + dp[i-1][w-wt[i-1]], dp[i-1][w]);
+            else
+                dp[i][w] = dp[i-1][w];
+        }
+    }
+
+    cout << dp[n][W];
+}
