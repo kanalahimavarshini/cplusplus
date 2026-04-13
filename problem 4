@@ -163,3 +163,21 @@ int main() {
     }
     cout << dp[n];
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    int coins[] = {1,2,5};
+    int sum = 5;
+    int dp[10] = {0};
+
+    dp[0] = 1;
+
+    for(int i = 0; i < 3; i++) {
+        for(int j = coins[i]; j <= sum; j++) {
+            dp[j] += dp[j - coins[i]];
+        }
+    }
+
+    cout << dp[sum];
+}
