@@ -405,3 +405,27 @@ int main() {
     else
         cout << "No Cycle";
 }
+#include <iostream>
+using namespace std;
+
+int parent[10];
+
+int find(int x) {
+    if(parent[x] == x) return x;
+    return parent[x] = find(parent[x]);
+}
+
+void unite(int a, int b) {
+    a = find(a);
+    b = find(b);
+    if(a != b) parent[a] = b;
+}
+
+int main() {
+    for(int i=0;i<10;i++) parent[i]=i;
+
+    unite(1,2);
+    unite(2,3);
+
+    cout << find(3);
+}
