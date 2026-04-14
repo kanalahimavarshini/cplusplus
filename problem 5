@@ -130,3 +130,20 @@ int main() {
 
     cout << maxSum;
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    int h[] = {1,8,6,2,5,4,8,3,7};
+    int l=0, r=8, maxArea=0;
+
+    while(l<r) {
+        int area = min(h[l],h[r])*(r-l);
+        maxArea = max(maxArea, area);
+
+        if(h[l] < h[r]) l++;
+        else r--;
+    }
+
+    cout << maxArea;
+}
