@@ -467,3 +467,27 @@ int main() {
 
     cout << "MST cost: " << cost;
 }
+#include <iostream>
+#include <vector>
+using namespace std;
+
+struct Edge {
+    int u, v, w;
+};
+
+int main() {
+    int V = 3;
+    vector<Edge> edges = {{0,1,4},{1,2,-2},{0,2,5}};
+    vector<int> dist(V, 1e9);
+
+    dist[0] = 0;
+
+    for(int i = 0; i < V-1; i++) {
+        for(auto e : edges) {
+            if(dist[e.u] + e.w < dist[e.v])
+                dist[e.v] = dist[e.u] + e.w;
+        }
+    }
+
+    cout << dist[2];
+}
