@@ -88,3 +88,26 @@ int main() {
 
     cout << dp[1][1];
 }
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main() {
+    string s = "applepenapple";
+    set<string> dict = {"apple","pen"};
+    int n = s.length();
+
+    bool dp[20] = {false};
+    dp[0] = true;
+
+    for(int i=1;i<=n;i++) {
+        for(int j=0;j<i;j++) {
+            if(dp[j] && dict.count(s.substr(j,i-j))) {
+                dp[i] = true;
+                break;
+            }
+        }
+    }
+
+    cout << (dp[n] ? "Yes" : "No");
+}
