@@ -11,3 +11,13 @@ int main() {
     else
         cout << "Not Found";
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    string text = "hello world";
+    string pat = "world";
+
+    if(text.find(pat) != string::npos)
+        cout << "Match Found";
+}
