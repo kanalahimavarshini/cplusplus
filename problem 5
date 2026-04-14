@@ -1,0 +1,13 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    string text = "ababcab";
+    string pat = "abc";
+
+    if(text.find(pat) != string::npos)
+        cout << "Found";
+    else
+        cout << "Not Found";
+}
