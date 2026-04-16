@@ -427,3 +427,15 @@ int main() {
     Node* root = new Node{1,NULL,NULL};
     cout << root->data;
 }
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int arr[] = {7,10,4,3,20,15};
+    int k = 3;
+
+    sort(arr, arr+6);
+
+    cout << arr[k-1];
+}
