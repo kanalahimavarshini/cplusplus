@@ -316,3 +316,14 @@ int main() {
 
     cout << maxLen;
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    string s = "ADOBECODEBANC", t = "ABC";
+
+    if(s.find("ABC") != string::npos)
+        cout << "Possible";
+    else
+        cout << "Not Possible";
+}
