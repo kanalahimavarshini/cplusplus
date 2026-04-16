@@ -403,3 +403,27 @@ int main() {
         head = head->next;
     }
 }
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int data;
+    Node* left;
+    Node* right;
+};
+
+Node* lca(Node* root, int a, int b) {
+    if(!root) return NULL;
+    if(root->data == a || root->data == b) return root;
+
+    Node* left = lca(root->left,a,b);
+    Node* right = lca(root->right,a,b);
+
+    if(left && right) return root;
+    return left ? left : right;
+}
+
+int main() {
+    Node* root = new Node{1,NULL,NULL};
+    cout << root->data;
+}
