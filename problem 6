@@ -65,3 +65,26 @@ int main() {
     insert(root,"cat");
     cout << search(root,"cat");
 }
+#include <iostream>
+using namespace std;
+
+bool dfs(char b[][3], int i, int j, string w, int k) {
+    if(k == w.size()) return true;
+    if(i<0||j<0||i>=3||j>=3||b[i][j]!=w[k]) return false;
+
+    char temp = b[i][j];
+    b[i][j] = '#';
+
+    bool found = dfs(b,i+1,j,w,k+1) ||
+                 dfs(b,i-1,j,w,k+1) ||
+                 dfs(b,i,j+1,w,k+1) ||
+                 dfs(b,i,j-1,w,k+1);
+
+    b[i][j] = temp;
+    return found;
+}
+
+int main() {
+    char b[3][3] = {{'A','B','C'},{'D','E','F'},{'G','H','I'}};
+    cout << dfs(b,0,0,"ABE",0);
+}
