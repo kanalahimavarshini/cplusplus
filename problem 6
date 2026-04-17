@@ -88,3 +88,23 @@ int main() {
     char b[3][3] = {{'A','B','C'},{'D','E','F'},{'G','H','I'}};
     cout << dfs(b,0,0,"ABE",0);
 }
+#include <iostream>
+using namespace std;
+
+bool solve(int g[9][9], int r, int c) {
+    if(r==9) return true;
+    if(c==9) return solve(g,r+1,0);
+    if(g[r][c]!=0) return solve(g,r,c+1);
+
+    for(int num=1;num<=9;num++) {
+        g[r][c]=num;
+        if(solve(g,r,c+1)) return true;
+        g[r][c]=0;
+    }
+    return false;
+}
+
+int main() {
+    int g[9][9]={0};
+    solve(g,0,0);
+}
