@@ -1,0 +1,29 @@
+
+#include <iostream>
+#include <queue>
+using namespace std;
+
+int main() {
+    priority_queue<int> maxH;
+    priority_queue<int, vector<int>, greater<int>> minH;
+
+    int arr[] = {5,15,1,3};
+
+    for(int x : arr) {
+        if(maxH.empty() || x <= maxH.top())
+            maxH.push(x);
+        else
+            minH.push(x);
+
+        if(maxH.size() > minH.size()+1) {
+            minH.push(maxH.top());
+            maxH.pop();
+        }
+        else if(minH.size() > maxH.size()) {
+            maxH.push(minH.top());
+            minH.pop();
+        }
+
+        cout << maxH.top() << " ";
+    }
+}
