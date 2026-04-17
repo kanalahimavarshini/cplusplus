@@ -150,3 +150,18 @@ int main() {
         }
     }
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {3,4,5,1,2};
+    int l=0,r=4;
+
+    while(l<r) {
+        int mid=(l+r)/2;
+        if(arr[mid] > arr[r]) l=mid+1;
+        else r=mid;
+    }
+
+    cout << arr[l];
+}
