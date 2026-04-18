@@ -394,3 +394,29 @@ int main() {
         }
     }
 }
+#include <iostream>
+using namespace std;
+
+int main() {
+    int arr[] = {1,5,11,5};
+    int n = 4, sum = 0;
+
+    for(int x:arr) sum += x;
+    if(sum % 2) return cout<<"No",0;
+
+    sum /= 2;
+    bool dp[10][50] = {false};
+
+    for(int i=0;i<=n;i++) dp[i][0]=true;
+
+    for(int i=1;i<=n;i++) {
+        for(int j=1;j<=sum;j++) {
+            if(arr[i-1]<=j)
+                dp[i][j]=dp[i-1][j]||dp[i-1][j-arr[i-1]];
+            else
+                dp[i][j]=dp[i-1][j];
+        }
+    }
+
+    cout << (dp[n][sum]?"Yes":"No");
+}
