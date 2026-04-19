@@ -651,3 +651,29 @@ long long power(long long a,long long b,long long mod) {
 int main() {
     cout << power(2,10,1000000007);
 }
+#include <iostream>
+using namespace std;
+
+double power(double x,int n) {
+    double res=1;
+    for(int i=0;i<n;i++) res*=x;
+    return res;
+}
+
+int main() {
+    int n=3;
+    double num=27;
+
+    double l=1,r=num;
+
+    while(r-l>1e-6) {
+        double mid=(l+r)/2;
+
+        if(power(mid,n)<num)
+            l=mid;
+        else
+            r=mid;
+    }
+
+    cout << l;
+}
