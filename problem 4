@@ -672,3 +672,20 @@ int main() {
     int x,y;
     cout << gcd(30,20,x,y);
 }
+#include <iostream>
+using namespace std;
+
+long long power(long long a,long long b,long long mod) {
+    long long res=1;
+    while(b) {
+        if(b&1) res=(res*a)%mod;
+        a=(a*a)%mod;
+        b>>=1;
+    }
+    return res;
+}
+
+int main() {
+    int a=3, mod=11;
+    cout << power(a,mod-2,mod);
+}
